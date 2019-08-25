@@ -10,7 +10,9 @@ class UserController {
       return res.status(401).json({ erro: 'User alredy exist' });
     }
 
+    // cadastrando usuario
     const { name, lastname, email } = await User.create(req.body);
+
     return res.json({
       name,
       lastname,
